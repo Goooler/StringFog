@@ -4,38 +4,18 @@ plugins {
 }
 
 dependencies {
-    implementation gradleApi()
-    implementation localGroovy()
+    compileOnly gradleApi()
+    compileOnly localGroovy()
     implementation 'com.android.tools.build:gradle:8.1.1'
     implementation project(':stringfog-core')
     implementation project(':stringfog-interface')
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src/main/java'
-        }
-        resources {
-            srcDir 'src/main/resources'
-        }
-    }
-}
-
-tasks.withType(ProcessResources){
+tasks.withType(ProcessResources).configureEach {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
-tasks.withType(Jar){
+tasks.withType(Jar).configureEach {
     duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-}
-
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
-
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = targetCompatibility
-    }
 }
 
 apply from: '../maven_local.gradle'

@@ -1,14 +1,12 @@
-apply plugin: 'java-library'
+plugins {
+    id 'java-library'
+}
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.ow2.asm:asm:9.5'
     implementation 'com.squareup:javawriter:2.5.1'
     implementation project(':stringfog-interface')
 }
-
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
 
 apply from: '../maven_local.gradle'
 

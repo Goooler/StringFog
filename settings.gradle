@@ -1,3 +1,18 @@
+pluginManagement {
+    repositories {
+        google()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
 include ':stringfog-gradle-plugin', ':stringfog-core', ':stringfog-interface'
 file('stringfog-ext').listFiles().each {
     if (it.isDirectory()) {

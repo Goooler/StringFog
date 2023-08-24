@@ -1,11 +1,10 @@
-apply plugin: 'java-library'
+plugins {
+    id 'java-library'
+}
 
 dependencies {
     api project(':stringfog-interface')
 }
-
-sourceCompatibility = JavaVersion.VERSION_11
-targetCompatibility = JavaVersion.VERSION_11
 
 apply from: '../../maven_local.gradle'
 
