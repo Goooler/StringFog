@@ -4,14 +4,14 @@ plugins {
 
 android {
     namespace "com.github.megatronking.stringfog"
-    compileSdk 31
+    compileSdk 34
     buildFeatures {
         buildConfig = true
     }
     defaultConfig {
         applicationId "com.github.megatronking.stringfog"
         minSdk 15
-        targetSdk 28
+        targetSdk 34
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
